@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        padding: 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f7f9fa;
+        color: #333;
+      }
+      /* Cores atualizadas com base no website */
+      .saojoao-blue {
+        color: #0071bc;
+      }
+      .bg-saojoao-blue {
+        background-color: #0071bc;
+      }
+      .border-saojoao-blue {
+        border-color: #0071bc;
+      }
+      .saojoao-yellow {
+        color: #fdb913;
+      }
+      .bg-saojoao-yellow {
+        background-color: #fdb913;
+      }
+      .border-saojoao-yellow {
+        border-color: #fdb913;
+      }
+      .nav-link {
+        transition: color 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #0071bc;
+      }
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        max-height: 400px;
+      }
+      @media (min-width: 768px) {
+        .chart-container {
+          height: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <meta charset="UTF-8" class="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      class=""
+    />
+    <title class="">Proposta Interativa: Eletroposto Farmácias São João</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" class="" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin=""
+      class=""
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+      class=""
+    />
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <div class="">
+          <img
+            src="./images/logo.png"
+            alt="Logomarca Farmácias São João"
+            class="h-8 md:h-10"
+            onerror="this.onerror=null;this.src='https://placehold.co/200x40/0071BC/FFFFFF?text=Sao+Joao';"
+          />
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#oportunidade" class="nav-link font-semibold text-gray-600"
+            >A Oportunidade</a
+          >
+          <a href="#beneficios" class="nav-link font-semibold text-gray-600"
+            >Benefícios</a
+          >
+          <a href="#impacto-local" class="nav-link font-semibold text-gray-600"
+            >Impacto Local</a
+          >
+          <a href="#totem" class="nav-link font-semibold text-gray-600"
+            >O Totem Digital</a
+          >
+          <a href="#conclusao" class="nav-link font-semibold text-gray-600"
+            >Conclusão</a
+          >
+        </div>
+        <a
+          href="#conclusao"
+          class="bg-saojoao-blue text-white font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-opacity"
+          >Ver Proposta</a
+        >
+      </nav>
+    </header>
+
+    <main class="">
+      <section
+        id="home"
+        class="relative bg-white pt-20 pb-10 md:pt-32 md:pb-20"
+      >
+        <div
+          class="container mx-auto px-6 grid md:grid-cols-2 gap-8 items-center"
+        >
+          <div class="text-center md:text-left">
+            <h1
+              class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight"
+            >
+              Farmácias São João: Conectando Nossos Clientes ao
+              <span class="saojoao-blue">Futuro da Mobilidade</span>.
+            </h1>
+            <p class="mt-4 text-lg text-gray-600">
+              Uma proposta de investimento para instalar um Eletroposto DC,
+              fortalecendo nossa comunidade, impulsionando a sustentabilidade e
+              criando uma nova ferramenta para atrair e fidelizar clientes.
+            </p>
+            <a
+              href="#oportunidade"
+              class="mt-8 inline-block bg-saojoao-blue text-white font-bold py-3 px-8 rounded-lg text-lg hover:opacity-90 transition-opacity"
+              >Explore a Proposta</a
+            >
+          </div>
+          <div class="flex justify-center">
+            <img
+              src="./images/totem.jpeg"
+              alt="Totem de Carregamento DC com a marca Farmácias São João"
+              class="rounded-xl shadow-2xl max-w-sm w-full"
+              onerror="this.onerror=null;this.src='https://placehold.co/400x500/0071BC/FFFFFF?text=Eletroposto+DC';"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="oportunidade" class="py-16 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold fade-in visible">
+            Uma Oportunidade em Plena Expansão
+          </h2>
+          <p
+            class="mt-4 max-w-3xl mx-auto text-gray-600 text-lg fade-in visible"
+          >
+            O mercado de veículos elétricos (VEs) no Brasil está crescendo
+            exponencialmente. Estar presente neste ecossistema não é apenas uma
+            escolha, mas uma necessidade estratégica. Esta seção apresenta os
+            dados que demonstram o tamanho e a urgência desta oportunidade para
+            as Farmácias São João.
+          </p>
+          <div class="mt-12 fade-in visible">
+            <div class="chart-container">
+              <canvas
+                id="evGrowthChart"
+                class=""
+                width="1400"
+                height="800"
+                style="
+                  display: block;
+                  box-sizing: border-box;
+                  height: 400px;
+                  width: 700px;
+                "
+              ></canvas>
+            </div>
+            <p class="mt-4 text-sm text-gray-500">
+              Fonte: Associação Brasileira do Veículo Elétrico (ABVE)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="beneficios" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold fade-in visible">
+              Benefícios Estratégicos para a São João e a Comunidade
+            </h2>
+            <p
+              class="mt-4 max-w-3xl mx-auto text-gray-600 text-lg fade-in visible"
+            >
+              Este investimento transcende a instalação de um carregador. Ele
+              gera valor tangível e intangível, fortalecendo nossa marca,
+              aprofundando o relacionamento com os clientes e reforçando nosso
+              papel de liderança na comunidade. Explore os principais
+              benefícios.
+            </p>
+          </div>
+          <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible">
+              <div
+                class="bg-saojoao-blue text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                💡
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Pioneirismo e Inovação</h3>
+              <p class="mt-2 text-gray-600">
+                Posiciona a São João como uma farmácia moderna, alinhada às
+                tendências globais de sustentabilidade e tecnologia.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible"
+              style="transition-delay: 100ms"
+            >
+              <div
+                class="bg-saojoao-blue text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                🌍
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Responsabilidade Ambiental</h3>
+              <p class="mt-2 text-gray-600">
+                Reforça o compromisso da São João com o meio ambiente, atraindo
+                um público que valoriza e prioriza a sustentabilidade.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible"
+              style="transition-delay: 200ms"
+            >
+              <div
+                class="bg-saojoao-blue text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                ⭐
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Diferenciação no Mercado</h3>
+              <p class="mt-2 text-gray-600">
+                Oferece um serviço exclusivo e de alto valor agregado,
+                destacando a São João da concorrência de forma positiva e
+                memorável.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible"
+              style="transition-delay: 300ms"
+            >
+              <div
+                class="bg-saojoao-blue text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                🎁
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Atração de Clientes</h3>
+              <p class="mt-2 text-gray-600">
+                Um serviço gratuito e de conveniência é um poderoso atrativo
+                para proprietários de VEs, um público estratégico e em
+                crescimento.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible"
+              style="transition-delay: 400ms"
+            >
+              <div
+                class="bg-saojoao-blue text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                📍
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Novo Ponto de Encontro</h3>
+              <p class="mt-2 text-gray-600">
+                Aumenta o fluxo de pessoas na região da farmácia, transformando
+                o local em um ponto de referência e conveniência na cidade.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible"
+              style="transition-delay: 500ms"
+            >
+              <div
+                class="bg-gray-800 text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                🤝
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Relacionamento Fortalecido</h3>
+              <p class="mt-2 text-gray-600">
+                Gera boa vontade e fortalece a percepção positiva da São João,
+                mostrando que a farmácia investe diretamente na comunidade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="impacto-local" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+          <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold fade-in visible">
+              Impacto Social e Econômico Local
+            </h2>
+            <p
+              class="mt-4 max-w-3xl mx-auto text-gray-600 text-lg fade-in visible"
+            >
+              O investimento no eletroposto não se limita à mobilidade; ele se
+              traduz em um catalisador para o desenvolvimento e a vitalidade da
+              comunidade local. Veja como a São João pode impulsionar a economia
+              e o bem-estar de todos.
+            </p>
+          </div>
+          <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible">
+              <div
+                class="bg-saojoao-blue text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                🚶
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Geração de Fluxo</h3>
+              <p class="mt-2 text-gray-600">
+                Aumenta o movimento de pessoas na região da farmácia,
+                beneficiando o comércio local e criando um ecossistema de
+                conveniência.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible"
+              style="transition-delay: 100ms"
+            >
+              <div
+                class="bg-saojoao-blue text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                🗺️
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Impulso ao Turismo Local</h3>
+              <p class="mt-2 text-gray-600">
+                Atrai motoristas de VEs de outras cidades e regiões,
+                incentivando o turismo e o consumo em estabelecimentos
+                parceiros.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible"
+              style="transition-delay: 200ms"
+            >
+              <div
+                class="bg-saojoao-blue text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                📚
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Educação e Conscientização</h3>
+              <p class="mt-2 text-gray-600">
+                Serve como um ponto de informação sobre mobilidade elétrica e
+                práticas sustentáveis, elevando a consciência ambiental da
+                comunidade.
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-8 rounded-xl card-hover fade-in visible"
+              style="transition-delay: 300ms"
+            >
+              <div
+                class="bg-saojoao-blue text-white h-12 w-12 rounded-lg flex items-center justify-center text-2xl"
+              >
+                🤝
+              </div>
+              <h3 class="mt-6 text-xl font-bold">Oportunidades de Parceria</h3>
+              <p class="mt-2 text-gray-600">
+                Abre portas para colaborações estratégicas com prefeituras,
+                empresas locais e iniciativas de sustentabilidade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="totem" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+          <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-bold fade-in visible">
+              O Totem Digital: Sua Nova Ferramenta de Mídia
+            </h2>
+            <p
+              class="mt-4 max-w-3xl mx-auto text-gray-600 text-lg fade-in visible"
+            >
+              O eletroposto é mais do que um ponto de energia; é um canal de
+              comunicação direto e de alto impacto. A tela digital integrada
+              permite à São João divulgar produtos, serviços e campanhas para um
+              público cativo. Interaja com a simulação abaixo para ver o
+              potencial em ação.
+            </p>
+          </div>
+          <div class="mt-12 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="fade-in visible">
+              <h3 class="text-2xl font-bold mb-4">Simule a Interação:</h3>
+              <p class="mb-6 text-gray-600">
+                Clique nos botões para ver como o conteúdo do totem pode mudar
+                para comunicar diferentes mensagens aos clientes enquanto seus
+                veículos carregam.
+              </p>
+              <div class="space-y-3">
+                <button
+                  data-content="beleza"
+                  class="totem-btn w-full text-left p-4 rounded-lg bg-white shadow-sm border border-gray-200 hover:bg-yellow-50 hover:border-saojoao-yellow transition"
+                >
+                  <span class="font-bold text-lg saojoao-blue"
+                    >Beleza e Bem-Estar</span
+                  ><br class="" />
+                  <span class="text-gray-600"
+                    >Ofertas exclusivas em dermocosméticos e perfumaria.</span
+                  >
+                </button>
+                <button
+                  data-content="sustentavel"
+                  class="totem-btn w-full text-left p-4 rounded-lg bg-white shadow-sm border border-gray-200 hover:bg-yellow-50 hover:border-saojoao-yellow transition"
+                >
+                  <span class="font-bold text-lg saojoao-blue"
+                    >Cuide da Saúde e do Planeta</span
+                  ><br class="" />
+                  <span class="text-gray-600"
+                    >Conheça nossa linha de produtos sustentáveis e naturais.
+                    Seu bem-estar e o meio ambiente agradecem!</span
+                  >
+                </button>
+                <button
+                  data-content="produtos"
+                  class="totem-btn w-full text-left p-4 rounded-lg bg-white shadow-sm border border-gray-200 hover:bg-yellow-50 hover:border-saojoao-yellow transition"
+                >
+                  <span class="font-bold text-lg saojoao-blue"
+                    >A Farmácia Completa</span
+                  ><br class="" />
+                  <span class="text-gray-600"
+                    >Descubra a variedade de vitaminas, suplementos e produtos
+                    de saúde para toda a família. Tudo em um só lugar.</span
+                  >
+                </button>
+              </div>
+            </div>
+            <div
+              class="flex justify-center fade-in visible"
+              style="transition-delay: 200ms"
+            >
+              <div
+                class="bg-gray-800 rounded-xl p-4 w-full max-w-sm shadow-2xl"
+              >
+                <div
+                  id="totem-screen"
+                  class="bg-black aspect-[9/16] rounded-md flex flex-col justify-center items-center p-6 text-white text-center transition-all duration-500"
+                >
+                  <div class="text-6xl mb-4">💄</div>
+                  <h4 class="text-2xl font-bold saojoao-yellow">
+                    Beleza e Bem-Estar
+                  </h4>
+                  <p class="mt-2 text-gray-300">
+                    Aproveite enquanto seu carro carrega para conhecer nossas
+                    ofertas exclusivas em dermocosméticos e produtos de beleza.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="conclusao" class="py-16 md:py-24 bg-saojoao-blue text-white">
+        <div class="container mx-auto px-6 text-center">
+          <img
+            src="./images/logo.png"
+            alt="Logomarca Farmácias São João"
+            class="h-12 mx-auto"
+            onerror="this.onerror=null;this.src='https://placehold.co/240x50/FFFFFF/0071BC?text=Sao+Joao';"
+          />
+          <h2 class="text-3xl md:text-4xl font-bold mt-6 fade-in visible">
+            Vamos Juntos Impulsionar o Futuro da Saúde e da Mobilidade.
+          </h2>
+          <p class="mt-4 max-w-3xl mx-auto text-lg opacity-90 fade-in visible">
+            Ao investir no eletroposto DC, a São João reafirma seu compromisso
+            com a inovação, a sustentabilidade e a excelência no atendimento.
+            Estamos prontos para discutir os próximos passos e transformar este
+            projeto em realidade.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-6 text-center text-sm">
+        <p class="">
+          © 2025 Farmácias São João. Proposta de Investimento em Eletroposto DC.
+        </p>
+        <p class="opacity-70">Esta é uma apresentação conceitual.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const totemScreen = document.getElementById("totem-screen");
+        const totemButtons = document.querySelectorAll(".totem-btn");
+
+        const totemContent = {
+          beleza: {
+            title: "Beleza e Bem-Estar",
+            text: "Aproveite enquanto seu carro carrega para conhecer nossas ofertas exclusivas em dermocosméticos e produtos de beleza.",
+            icon: "💄",
+          },
+          sustentavel: {
+            title: "Cuide da Saúde e do Planeta",
+            text: "Conheça nossa seleção especial de produtos sustentáveis e naturais. Seu bem-estar e o meio ambiente agradecem!",
+            icon: "🍃",
+          },
+          produtos: {
+            title: "A Farmácia Completa para a sua Saúde",
+            text: "Descubra a variedade de vitaminas, suplementos e produtos de saúde para toda a família. Tudo em um só lugar.",
+            icon: "💊",
+          },
+        };
+
+        function updateTotemScreen(contentKey) {
+          const content = totemContent[contentKey];
+          totemScreen.innerHTML = `
+                    <div class="text-6xl mb-4">${content.icon}</div>
+                    <h4 class="text-2xl font-bold saojoao-yellow">${content.title}</h4>
+                    <p class="mt-2 text-gray-300">${content.text}</p>
+                `;
+        }
+
+        updateTotemScreen("beleza");
+
+        totemButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const contentKey = button.getAttribute("data-content");
+            updateTotemScreen(contentKey);
+          });
+        });
+
+        const evChartCtx = document
+          .getElementById("evGrowthChart")
+          .getContext("2d");
+        const evGrowthChart = new Chart(evChartCtx, {
+          type: "bar",
+          data: {
+            labels: ["2022", "2023", "2024", "2025 (Projeção)"],
+            datasets: [
+              {
+                label: "Veículos Eletrificados Vendidos",
+                data: [
+                  49245, 93927, 150000, 250000,
+                ] /* Dados atualizados com projeção para 2025 */,
+                backgroundColor: [
+                  "rgba(0, 113, 188, 0.6)",
+                  "rgba(0, 113, 188, 0.7)",
+                  "rgba(253, 185, 19, 0.8)",
+                  "rgba(253, 185, 19, 0.9)",
+                ],
+                borderColor: [
+                  "rgba(0, 113, 188, 1)",
+                  "rgba(0, 113, 188, 1)",
+                  "rgba(253, 185, 19, 1)",
+                  "rgba(253, 185, 19, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value) {
+                    return value.toLocaleString("pt-BR");
+                  },
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                display: false,
+              },
+              title: {
+                display: true,
+                text: "Crescimento de Vendas de Veículos Eletrificados no Brasil",
+                font: {
+                  size: 16,
+                },
+                padding: {
+                  bottom: 20,
+                },
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    let label = context.dataset.label || "";
+                    if (label) {
+                      label += ": ";
+                    }
+                    if (context.parsed.y !== null) {
+                      label +=
+                        context.parsed.y.toLocaleString("pt-BR") + " unidades";
+                    }
+                    return label;
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        const observers = [];
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        fadeElements.forEach((el) => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1 }
+          );
+          observer.observe(el);
+          observers.push(observer);
+        });
+      });
+    </script>
+  </body>
+</html>
